@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Class Schedule</title>
+    <style>
+        body {
+            background-color: #f5f5f5;
+            display: flex;
+            justify-content: center;
+            padding: 50px 20px;
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .todo-card {
+            background-color: #fce4e4;
+            width: 100%;
+            max-width: 450px; /* 稍微调宽一点，给文字更多横向空间 */
+            padding: 35px;    /* 增加卡片内边距 */
+            border-radius: 16px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+        }
+
+        .main-toggle > summary {
+            list-style: none;
+            cursor: pointer;
+            text-align: center;
+            outline: none;
+            margin-bottom: 25px; /* 标题与内容拉开距离 */
+        }
+
+        .main-toggle h1 {
+            color: #d64a64;
+            font-family: 'Arial Black', sans-serif;
+            font-size: 2.2rem;
+            margin: 0;
+            letter-spacing: 1px;
+        }
+
+        .main-toggle small {
+            display: block;
+            margin-top: 8px;
+            opacity: 0.8;
+            font-size: 0.9rem;
+        }
+
+        .todo-item {
+            margin-bottom: 12px; /* 每个项目之间的间距 */
+            background: rgba(255, 255, 255, 0.2); /* 淡淡的背景色区分块 */
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .todo-item:hover {
+            background: rgba(255, 255, 255, 0.4);
+        }
+
+        summary {
+            font-size: 1.05rem;
+            font-weight: 600;
+            cursor: pointer;
+            outline: none;
+            color: #333;
+            padding: 12px 15px; /* 增加点击区域的间距 */
+            line-height: 1.4;
+        }
+
+        .details-content {
+            padding: 15px 20px 20px 45px; /* 增加左侧缩进，避开箭头位置 */
+            color: #555;
+            font-size: 0.95rem;
+            line-height: 1.8; /* 核心调整：增加行间距，防拥挤 */
+            background: rgba(255,255,255,0.4);
+            border-radius: 0 0 10px 10px;
+            border-top: 1px solid rgba(214, 74, 100, 0.1);
+        }
+
+        /* 强化学号和时间的视觉区分 */
+        .code { 
+            color: #d64a64; 
+            font-weight: bold; 
+            background: rgba(214, 74, 100, 0.1);
+            padding: 2px 6px;
+            border-radius: 4px;
+            margin-right: 5px;
+            font-size: 0.9rem;
+        }
+
+        .time { 
+            display: inline-block;
+            color: #d64a64; 
+            font-weight: 500;
+            background: rgba(255,255,255,0.6);
+            padding: 0 8px;
+            border-radius: 4px;
+            margin-top: 5px;
+        }
+
+        strong {
+            color: #444;
+            margin-right: 5px;
+        }
+
+        /* 隐藏 details 默认样式在某些浏览器下的杂乱感 */
+        details summary::-webkit-details-marker {
+            color: #d64a64;
+            margin-right: 10px;
+        }
+        .floating-home-btn {
+    position: fixed;    /* 固定定位，不随滚动条滚动 */
+    top: 20px;          /* 距离顶部 20px */
+    right: 20px;        /* 距离右侧 20px */
+    z-index: 9999;      /* 确保按钮在所有元素的最上方 */
+    cursor: pointer;    /* 鼠标悬停时显示手型 */
+    transition: transform 0.2s ease; /* 增加点击动画效果 */
+}
+
+.floating-home-btn img {
+    width: 50px;        /* 你可以根据需要调整按钮的大小 */
+    height: 50px;
+    display: block;
+}
+
+/* 鼠标悬停时的微调效果 */
+.floating-home-btn:hover {
+    transform: scale(1.1); /* 略微放大，增加交互感 */
+    opacity: 0.8;          /* 略微透明 */
+}
+    </style>
+</head>
+<body>
+
+<div class="todo-card">
+    <details class="main-toggle" open>
+        <summary>
+            <h1>CLASS SCHEDULE 📚</h1>
+            <small style="color: #d64a64;">Click to expand/collapse list</small>
+        </summary>
+
+        <div class="todo-item">
+            <details>
+                <summary><span class="code">PUCD 2125</span> Core 2: Interaction Studio</summary>
+                <div class="details-content">
+                    <strong>When:</strong> <span class="time">T R | 7:00 pm</span><br>
+                    <strong>Where:</strong> Parsons 2 W 13th, Room 311<br>
+                    <strong>Instructor:</strong> Gladun, Yevgeny
+                </div>
+            </details>
+        </div>
+
+        <div class="todo-item">
+            <details>
+                <summary><span class="code">UGLB 4100</span> Music as Method...</summary>
+                <div class="details-content">
+                    <strong>Where:</strong> Online Course, Room 999<br>
+                    <strong>Instructor:</strong> Reynolds, Kristin
+                </div>
+            </details>
+        </div>
+
+        <div class="todo-item">
+            <details>
+                <summary><span class="code">UURB 2089</span> Horror in the Urban Setting</summary>
+                <div class="details-content">
+                    <strong>When:</strong> <span class="time">M | 12:10 pm</span><br>
+                    <strong>Where:</strong> 63 Fifth Ave, Room 312<br>
+                    <strong>Instructor:</strong> Denza, Diana
+                </div>
+            </details>
+        </div>
+
+        <div class="todo-item">
+            <details>
+                <summary><span class="code">PUCD 2126</span> Core 2: Interaction Lab</summary>
+                <div class="details-content">
+                    <strong>When:</strong> <span class="time">F | 9:00 am</span><br>
+                    <strong>Where:</strong> Arnhold Hall 55 W13th, Room 202<br>
+                    <strong>Instructors:</strong> LeClair, Andrew / Rieger, Jack / Wang, Mianwei
+                </div>
+            </details>
+        </div>
+
+        <div class="todo-item">
+            <details>
+                <summary><span class="code">PLDS 2500</span> Intro to Design Studies</summary>
+                <div class="details-content">
+                    <strong>When:</strong> <span class="time">T | 4:00 pm</span><br>
+                    <strong>Where:</strong> 66 West 12th, Room 106<br>
+                    <strong>Instructor:</strong> Marina, Claudia
+                </div>
+            </details>
+        </div>
+
+        <div class="todo-item">
+            <details>
+                <summary><span class="code">PUCD 2130</span> Core 2: Typography</summary>
+                <div class="details-content">
+                    <strong>When:</strong> <span class="time">M | 4:00 pm</span><br>
+                    <strong>Where:</strong> 66 5th Ave, Room 822<br>
+                    <strong>Instructor:</strong> Maletic, Tamara
+                </div>
+            </details>
+        </div>
+
+        <div class="todo-item">
+            <details>
+                <summary><span class="code">PLDS 2501</span> Design Studies: Recitation</summary>
+                <div class="details-content">
+                    <strong>When:</strong> <span class="time">R | 4:00 pm</span><br>
+                    <strong>Where:</strong> 66 West 12th, Room 518<br>
+                    <strong>Instructor:</strong> Alessandra, Arimbi
+                </div>
+            </details>
+        </div>
+
+    </details>
+</div>
+<a href="homepage.html" class="floating-home-btn">
+    <img src="cancel.png" alt="back">
+</a>
+
+</body>
+</html>
