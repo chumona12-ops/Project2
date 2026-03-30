@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>To My Amazing BFF Bella</title>
+    <style>
+        body {
+            background-color: #fdf2f2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            font-family: 'Palatino', 'Georgia', serif;
+            line-height: 2.2;
+            color: #5a4a4a;
+        }
+
+        .letter-paper {
+            background: #fffafa;
+            width: 100%;
+            max-width: 500px;
+            padding: 50px;
+            border-radius: 5px;
+            box-shadow: 15px 15px 0px #f8b1b1;
+            border: 1px solid #fce4e4;
+            position: relative;
+            background-image: linear-gradient(#fce4e4 1px, transparent 1px);
+            background-size: 100% 2.2em;
+        }
+
+        .letter-header {
+            font-size: 1.2rem;
+            color: #d64a64;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        details { display: inline; }
+
+        summary {
+            display: inline;
+            list-style: none;
+            cursor: pointer;
+            color: #d64a64;
+            font-weight: bold;
+            border-bottom: 2px dotted #f8b1b1;
+            padding: 0 2px;
+            transition: all 0.3s;
+            outline: none;
+        }
+
+        summary::-webkit-details-marker { display: none; }
+
+        summary:hover {
+            background-color: #fce4e4;
+            border-bottom-style: solid;
+        }
+
+        .reveal {
+            display: inline;
+            animation: fadeIn 0.8s ease-out forwards;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateX(5px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        details[open] > summary {
+            color: #5a4a4a;
+            border-bottom: none;
+            cursor: default;
+            pointer-events: none;
+        }
+
+        .signature-block {
+            margin-top: 40px;
+            text-align: right;
+            border-top: 1px dashed #f8b1b1;
+            padding-top: 20px;
+        }
+
+        .signature {
+            font-family: 'Cursive', 'Brush Script MT', sans-serif;
+            font-size: 1.8rem;
+            color: #d64a64;
+        }
+
+        .emoji { font-style: normal; }
+        .floating-home-btn {
+    position: fixed;    /* 固定定位，不随滚动条滚动 */
+    top: 20px;          /* 距离顶部 20px */
+    right: 20px;        /* 距离右侧 20px */
+    z-index: 9999;      /* 确保按钮在所有元素的最上方 */
+    cursor: pointer;    /* 鼠标悬停时显示手型 */
+    transition: transform 0.2s ease; /* 增加点击动画效果 */
+}
+
+.floating-home-btn img {
+    width: 50px;        /* 你可以根据需要调整按钮的大小 */
+    height: 50px;
+    display: block;
+}
+
+/* 鼠标悬停时的微调效果 */
+.floating-home-btn:hover {
+    transform: scale(1.1); /* 略微放大，增加交互感 */
+    opacity: 0.8;          /* 略微透明 */
+}
+    </style>
+</head>
+<body>
+
+<div class="letter-paper">
+    <div class="letter-header">Dear Bella,</div>
+
+    <div class="content">
+        Happy Birthday to my 
+        <details>
+            <summary>amazing BFF! 🎉</summary>
+            <span class="reveal"> Can you believe we first met during our 
+                <details>
+                    <summary>first semester of university?</summary>
+                    <span class="reveal"> Who knew that as 
+                        <details>
+                            <summary>freshmen,</summary>
+                            <span class="reveal"> we’d not only gain experience but also a 
+                                <details>
+                                    <summary>ridiculously fun friend like you!</summary>
+                                    <span class="reveal"> You always know how to make stressful moments feel 
+                                        <details>
+                                            <summary>light and hilarious,</summary>
+                                            <span class="reveal"> and I’m so grateful for all the 
+                                                <details>
+                                                    <summary>laughs and support</summary>
+                                                    <span class="reveal"> you’ve given me. I hope this year brings you more luck than a 
+                                                        <details>
+                                                            <summary>perfect interview,</summary>
+                                                            <span class="reveal"> sweeter days than coffee, and more 
+                                                                <details>
+                                                                    <summary>joy than cake! 🎂</summary>
+                                                                    <span class="reveal"> (And yes, you absolutely must eat extra cake 😏) Wishing you a birthday full of 
+                                                                        <details>
+                                                                            <summary>outrageous laughter,</summary>
+                                                                            <span class="reveal"> happiness that soars like a 
+                                                                                <details>
+                                                                                    <summary>balloon, 🎈</summary>
+                                                                                    <span class="reveal"> and moments as epic as your 
+                                                                                        <details>
+                                                                                            <summary>best memes!</summary>
+                                                                                            <div class="signature-block">
+                                                                                                Forever rooting for you,<br>
+                                                                                                <span class="signature">Bowen</span>
+                                                                                            </div>
+                                                                                        </details>
+                                                                                    </span>
+                                                                                </details>
+                                                                            </span>
+                                                                        </details>
+                                                                    </span>
+                                                                </details>
+                                                            </span>
+                                                        </details>
+                                                    </span>
+                                                </details>
+                                            </span>
+                                        </details>
+                                    </span>
+                                </details>
+                            </span>
+                        </details>
+                    </span>
+                </details>
+            </span>
+        </details>
+    </div>
+</div>
+<a href="homepage.html" class="floating-home-btn">
+    <img src="cancel.png" alt="back">
+</a>
+</body>
+</html>

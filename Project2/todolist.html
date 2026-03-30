@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Birthday Vibes List</title>
+    <style>
+        body {
+            background-color: #f5f5f5;
+            display: flex;
+            justify-content: center;
+            padding-top: 50px;
+            font-family: sans-serif;
+        }
+
+        /* 外层容器 */
+        .todo-card {
+            background-color: #fce4e4;
+            width: 350px;
+            padding: 15px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        /* 标题外层的 Details */
+        .main-toggle {
+            width: 100%;
+        }
+
+        /* 标题样式 (作为最外层的 Summary) */
+        .main-title-summary {
+            list-style: none; /* 隐藏默认小箭头，如果你想保留可以删掉这行 */
+            cursor: pointer;
+            text-align: center;
+            outline: none;
+        }
+
+        .main-title-summary h1 {
+            color: #d64a64;
+            font-family: 'Arial Black', sans-serif;
+            font-size: 2.2rem;
+            margin: 10px 0;
+            letter-spacing: 1px;
+            transition: transform 0.3s ease;
+        }
+
+        .main-title-summary h1:hover {
+            transform: scale(1.05); /* 悬停时微放大，提示可点击 */
+        }
+
+        /* 内部任务列表容器 */
+        .list-content {
+            margin-top: 20px;
+            padding: 10px;
+            border-top: 2px dashed #f8b1b1; /* 添加一条可爱的虚线分割 */
+            animation: slideDown 0.4s ease-out;
+        }
+
+        /* 单个任务项 */
+        .todo-item {
+            margin-bottom: 15px;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+            padding-bottom: 10px;
+        }
+
+        .todo-item summary {
+            font-size: 1.05rem;
+            font-weight: bold;
+            cursor: pointer;
+            outline: none;
+            color: #444;
+        }
+
+        .details-content {
+            padding: 10px 10px 10px 25px;
+            color: #666;
+            font-size: 0.9rem;
+            line-height: 1.4;
+        }
+
+        input[type="checkbox"] {
+            margin-right: 10px;
+            accent-color: #d64a64; /* 复选框颜色匹配主题 */
+        }
+
+        /* 展开时的简单动画 */
+        @keyframes slideDown {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .floating-home-btn {
+    position: fixed;    /* 固定定位，不随滚动条滚动 */
+    top: 20px;          /* 距离顶部 20px */
+    right: 20px;        /* 距离右侧 20px */
+    z-index: 9999;      /* 确保按钮在所有元素的最上方 */
+    cursor: pointer;    /* 鼠标悬停时显示手型 */
+    transition: transform 0.2s ease; /* 增加点击动画效果 */
+}
+
+.floating-home-btn img {
+    width: 50px;        /* 你可以根据需要调整按钮的大小 */
+    height: 50px;
+    display: block;
+}
+
+/* 鼠标悬停时的微调效果 */
+.floating-home-btn:hover {
+    transform: scale(1.1); /* 略微放大，增加交互感 */
+    opacity: 0.8;          /* 略微透明 */
+}
+    </style>
+</head>
+<body>
+
+<div class="todo-card">
+    <details class="main-toggle" open> <summary class="main-title-summary">
+            <h1>BIRTHDAY VIBES 🎂</h1>
+            <small style="color: #d64a64;">( Click to expand/collapse list )</small>
+        </summary>
+
+        <div class="list-content">
+            <div class="todo-item">
+                <details>
+                    <summary><input type="checkbox"> Grab the Gift 🎁</summary>
+                    <div class="details-content">
+                        Double-check the wrapping and don't forget the birthday card!
+                    </div>
+                </details>
+            </div>
+
+            <div class="todo-item">
+                <details>
+                    <summary><input type="checkbox"> Birthday Dinner 🍕</summary>
+                    <div class="details-content">
+                        Meeting up with the squad for a massive feast at the pre-booked spot.
+                    </div>
+                </details>
+            </div>
+
+            <div class="todo-item">
+                <details>
+                    <summary><input type="checkbox"> Karaoke Night 🎤</summary>
+                    <div class="details-content">
+                        Time to channel your inner rockstar and hit those high notes!
+                    </div>
+                </details>
+            </div>
+
+            <div class="todo-item">
+                <details>
+                    <summary><input type="checkbox"> Late Night Gaming 🎮</summary>
+                    <div class="details-content">
+                        Heading back home to carry the squad to victory!
+                    </div>
+                </details>
+            </div>
+
+            <div class="todo-item">
+                <details>
+                    <summary><input type="checkbox"> Photo Dump 📸</summary>
+                    <div class="details-content">
+                        Post the best shots and tag the crew. Epic night in the books!
+                    </div>
+                </details>
+            </div>
+        </div>
+    </details>
+</div>
+<a href="homepage.html" class="floating-home-btn">
+    <img src="cancel.png" alt="back">
+</a>
+</body>
+</html>

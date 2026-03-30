@@ -1,0 +1,173 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Window Blinds Interaction</title>
+
+<style>
+  /* 整个画布：让内容居中 */
+  .stage {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgb(255, 227, 231)
+  }
+
+  /* 窗口容器 */
+  .window-container {
+    position: relative;
+    width: 250px;
+    height: 350px;
+    background-image: url("window.png");
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+
+    /* ⭐ 自适应缩放（关键） */
+    transform: scale(min(1.2, 80vw / 250, 80vh / 350));
+    transform-origin: center;
+
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+    border-radius: 12px;
+  }
+
+  /* 提示文字 */
+  .pull-hint {
+    position: absolute;
+    top: 8px;
+    width: 100%;
+    text-align: center;
+    color: rgb(247, 79, 143);
+    font-size: 12px;
+    z-index: 100;
+    pointer-events: none;
+    animation: blink 1.5s infinite;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+  }
+
+  /* 百叶窗系统 */
+  .blinds-system {
+    position: relative;
+    z-index: 10;
+    width: 90%;
+    margin: 10px auto;
+    perspective: 1000px;
+  }
+
+  .blinds-toggle summary {
+    list-style: none;
+    cursor: pointer;
+    outline: none;
+  }
+
+  .blinds-toggle summary::-webkit-details-marker {
+    display: none;
+  }
+
+  /* hover 反馈 */
+  .blinds-toggle summary:hover .blind-leaf {
+    filter: brightness(1.1);
+    transform: translateY(2px);
+    transition: 0.3s;
+  }
+
+  /* 每一片叶子 */
+  .blind-leaf {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin-bottom: 8px;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+
+  /* 展开内容 */
+  .blinds-content-wrap {
+    overflow: hidden;
+    transition: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transform-origin: top;
+    opacity: 0;
+  }
+
+  .blinds-toggle[open] .blinds-content-wrap {
+    opacity: 1;
+    max-height: 800px;
+    transform: scaleY(1);
+  }
+
+  .blinds-toggle:not([open]) .blinds-content-wrap {
+    max-height: 0;
+    transform: scaleY(0);
+  }
+
+  @keyframes blink {
+    0% { opacity: 0.3; }
+    50% { opacity: 1; }
+    100% { opacity: 0.3; }
+  }
+  .floating-home-btn {
+    position: fixed;    /* 固定定位，不随滚动条滚动 */
+    top: 20px;          /* 距离顶部 20px */
+    right: 20px;        /* 距离右侧 20px */
+    z-index: 9999;      /* 确保按钮在所有元素的最上方 */
+    cursor: pointer;    /* 鼠标悬停时显示手型 */
+    transition: transform 0.2s ease; /* 增加点击动画效果 */
+}
+
+.floating-home-btn img {
+    width: 50px;        /* 你可以根据需要调整按钮的大小 */
+    height: 50px;
+    display: block;
+}
+
+/* 鼠标悬停时的微调效果 */
+.floating-home-btn:hover {
+    transform: scale(1.1); /* 略微放大，增加交互感 */
+    opacity: 0.8;          /* 略微透明 */
+}
+</style>
+</head>
+
+<body>
+
+<div class="stage">
+  <div class="window-container">
+
+    <div class="pull-hint">
+      Pull the blinds...
+    </div>
+
+    <div class="blinds-system">
+      <details class="blinds-toggle">
+        <summary>
+          <img src="windowpart1.png" alt="Top Leaf" class="blind-leaf">
+        </summary>
+
+        <div class="blinds-content-wrap">
+          <img src="windowpart1.png" class="blind-leaf">
+          <img src="windowpart1.png" class="blind-leaf">
+          <img src="windowpart1.png" class="blind-leaf">
+          <img src="windowpart1.png" class="blind-leaf">
+          <img src="windowpart1.png" class="blind-leaf">
+          <img src="windowpart1.png" class="blind-leaf">
+          <img src="windowpart1.png" class="blind-leaf">
+          <img src="windowpart1.png" class="blind-leaf">
+          <img src="windowpart1.png" class="blind-leaf">
+          <img src="windowpart1.png" class="blind-leaf">
+          <img src="windowpart1.png" class="blind-leaf">
+          <img src="windowpart1.png" class="blind-leaf">
+        </div>
+
+      </details>
+    </div>
+
+  </div>
+</div>
+<a href="homepage.html" class="floating-home-btn">
+    <img src="cancel.png" alt="back">
+</a>
+</body>
+</html>
